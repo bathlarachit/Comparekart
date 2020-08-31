@@ -1,0 +1,54 @@
+{% extends 'eapp/base.html' %}
+{% load static %}
+{% block title %}
+About us
+{% endblock %}
+{% block  body%}
+<br>
+<section style="@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap');font-family: 'Kalam', cursive;">
+<h3 style="text-align:center;">Know More About Us</h3>
+<br><br>
+
+<div class="row">
+<div class="col-lg-7 col-sm-8 col col-md-7">
+  <img style="width:100%;height:auto;"src="{% static 'images/about.jpg' %}" alt="">
+  </div>
+    <div class="col-lg-5 col-sm-4 col col-md-5">
+<p>We are learners , love to develop things around which might help others .This project is done  collaboration with friends </p>
+<ul>
+<li> <p>I am Rachit, the student of NITW CSE,I love to explore different field</p></li>
+<li>
+<p>I am Sameer,the student of NITW EEE,I finds tech field fasinating</p></li>
+</ul>
+   </div>
+</div>
+</section >
+<br>
+<section style="@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap');font-family: 'Kalam', cursive;">
+<h4 style="text-align:center;">We have done some work earlier,Let's check it together</h4>
+<br><br>
+<div class="row">
+  <div class="col-lg-6 col-sm-12 col col-md-6">
+    <div class="card" style="width: 24rem; height:auto">
+  <div class="card-body">
+    <h5 class="card-title">Resume Builder</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Create a your Resume</h6>
+    <p class="card-text">Free tools for creating your resume with us as well as produce pdf file for you</p>
+    <a href="https://cv09.herokuapp.com/" target="_blank" class="card-link">Visit Resume website</a>
+  </div>
+</div>
+  </div>
+  <br>
+  <div class="col-lg-6 col-sm-12 col col-md-6">
+    <div class="card" style="width: 24rem; height:auto;">
+  <div class="card-body">
+    <h5 class="card-title">Ecommerece Website</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Online Shopping site</h6>
+    <p class="card-text">Place where you can work both as seller and buyer,you can promote for your affliate product as well</p>
+    <a href="https://bathlarachit.pythonanywhere.com" target="_blank" class="card-link">Visit Ecommerece website</a>
+  </div>
+</div>
+  </div>
+</div>
+</section>
+{% endblock %}
