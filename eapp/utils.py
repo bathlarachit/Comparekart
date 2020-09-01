@@ -117,3 +117,4 @@ def amazon(product_name):
 
         amazon_details=amazon_details[1:5]
         return amazon_details
+# i am Sameer
