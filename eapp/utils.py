@@ -77,9 +77,28 @@ def flipkart(product_name):
 #                    print(site, name, price, url, prod_url)
                 except:
                     pass
-                    flipkart_details=flipkart_details[:4]
+      
+            
+        if len(flipkart_details) == 0:
+            # soup.find_all(class_='_3O0U0u')
+            for i , pro in enumerate(soup.find_all(class_='_3O0U0u')):
+                price = pro.find(class_='_1vC4OE').text.strip()
+                try:
+                    name = pro.find(class_='_2cLu-l').text.strip()
+                except:
+                    name = pro.find(class_='_2mylT6 _3Ockxk').text.strip()
+                try:
+                    prod_url = pro.find(class_='_2mylT6 _3Ockxk')
+                    prod_url = prod_url.attrs['href']
+                    prod_url = "https://www.flipkart.com" + prod_url
+                except:
+                    prod_url = pro.find(class_='_2cLu-l')
+                    prod_url = prod_url.attrs['href']
+                    prod_url = "https://www.flipkart.com" + prod_url
+                # print(prod_url,end='\n\n\n')
+                flipkart_details.append([name,price,'','',prod_url])
 
-
+        flipkart_details=flipkart_details[:4]        
         return flipkart_details
 
 def amazon(product_name):
