@@ -96,7 +96,7 @@ def flipkart(product_name):
                     prod_url = prod_url.attrs['href']
                     prod_url = "https://www.flipkart.com" + prod_url
                 # print(prod_url,end='\n\n\n')
-                flipkart_details.append([name,price,'','',prod_url])
+                flipkart_details.append([name,price,'','','','',prod_url])
 
         flipkart_details=flipkart_details[:4]        
         return flipkart_details
