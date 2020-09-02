@@ -77,8 +77,8 @@ def flipkart(product_name):
 #                    print(site, name, price, url, prod_url)
                 except:
                     pass
-      
-            
+
+
         if len(flipkart_details) == 0:
             # soup.find_all(class_='_3O0U0u')
             for i , pro in enumerate(soup.find_all(class_='_3O0U0u')):
@@ -86,9 +86,9 @@ def flipkart(product_name):
                 try:
                     name = pro.find(class_='_2cLu-l').text.strip()
                 except:
-                    name = pro.find(class_='_2mylT6 _3Ockxk').text.strip()
+                    name = pro.find(class_='_2mylT6').text.strip()
                 try:
-                    prod_url = pro.find(class_='_2mylT6 _3Ockxk')
+                    prod_url = pro.find(class_='_2mylT6')
                     prod_url = prod_url.attrs['href']
                     prod_url = "https://www.flipkart.com" + prod_url
                 except:
@@ -98,7 +98,8 @@ def flipkart(product_name):
                 # print(prod_url,end='\n\n\n')
                 flipkart_details.append([name,price,'','','','',prod_url])
 
-        flipkart_details=flipkart_details[:4]        
+        flipkart_details=flipkart_details[:4]
+        # print(flipkart_details)
         return flipkart_details
 
 def amazon(product_name):
@@ -124,8 +125,11 @@ def amazon(product_name):
                     price = mob.find(class_='a-price-whole').text.strip()
                     try:
                         name = mob.find(class_="a-size-medium a-color-base a-text-normal").text.strip()
-                    except:pass
-
+                    except:
+                        try:
+                            name = mob.find(class_="a-size-base-plus").text.strip()
+                        except:
+                            name = mob.find(class_="a-text-normal").text.strip()
                     prod_url = mob.find(class_='a-link-normal')
                     prod_url = prod_url.attrs['href']
                     prod_url = "https://www.amazon.in" + prod_url
@@ -135,5 +139,6 @@ def amazon(product_name):
                     except:pass
 
         amazon_details=amazon_details[1:5]
+
+        # print(amazon_details)
         return amazon_details
-# i am Sameer
